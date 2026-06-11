@@ -36,20 +36,29 @@ cp -r skills/skills/feature-test ~/.claude/skills/
 
 **触发方式**：`/feature-test <模块名>`，或直接说"测试一下 XX 功能"、"验收 XX"、"跑一遍 QA"。
 
-**环境要求**：项目可在本地启动 dev 服务器；环境中装有 `frontend-design-audit` 与 `ux-audit` 两个审计 skill（缺失时会在报告中注明跳过）。
+**环境要求**：项目可在本地启动 dev 服务器。两个审计 skill 已随本插件捆绑分发，安装即可用，无需额外安装。
+
+### ux-audit — 真实用户走查审计（捆绑分发）
+
+以真实用户身份走查 live web app，强制真实交互取证（打字/点击/观察），覆盖多窗格压力矩阵、视觉打磨、a11y（axe-core）、性能预算（LCP/CLS/INP）、11 个场景电池。来源：dev-tools 插件，作者 Jeremy Dawes / Jezweb（jeremy@jezweb.net）。原插件未附带许可证文件，本仓库仅为个人使用便利而捆绑，版权归原作者所有；如有异议将移除。
+
+### frontend-design-audit — 前端可用性审计（捆绑分发）
+
+基于启发式规则对前端代码做结构化可用性评估，产出按严重度分级的审计报告。来源：[mistyhx/frontend-design-audit](https://github.com/mistyhx/frontend-design-audit)（MIT，LICENSE 已随目录保留）。
 
 ## 仓库结构
 
 ```
 .
 ├── .claude-plugin/
-│   └── marketplace.json   # 插件市场清单
+│   └── marketplace.json            # 插件市场清单
 ├── skills/
-│   └── feature-test/
-│       └── SKILL.md       # skill 定义
+│   ├── feature-test/               # 主 skill：测试 + 审计一体化流程
+│   ├── ux-audit/                   # 捆绑：真实用户走查审计（MIT）
+│   └── frontend-design-audit/      # 捆绑：前端可用性审计（MIT，含原 LICENSE）
 └── README.md
 ```
 
 ## License
 
-MIT
+本仓库自有内容（feature-test）为 MIT。捆绑的第三方 skill 版权归各自作者所有：frontend-design-audit 为 MIT（已保留原 LICENSE）；ux-audit 原插件未声明许可证，见上文说明。
