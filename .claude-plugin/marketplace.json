@@ -6,14 +6,14 @@
   },
   "metadata": {
     "description": "rouroulou 的个人 Claude Code skills 集合",
-    "version": "0.3.0"
+    "version": "0.3.1"
   },
   "plugins": [
     {
       "name": "feature-test",
       "source": "./",
       "description": "功能模块完整测试闭环（捆绑 ux-audit 与 frontend-design-audit）：读取功能文档生成测试用例（连通性 + 极端场景），真实环境逐条执行，双审计，输出按 P0-P3 优先级划分的 Markdown 测试报告（含根因分析与行业通用方案建议），报告为唯一交付物。",
-      "version": "0.3.0",
+      "version": "0.3.1",
       "author": {
         "name": "rouroulou"
       }
